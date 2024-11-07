@@ -3,35 +3,19 @@ package sort.algorithms;
 import sort.Utils;
 
 public class HeapSort {
-    public static void print(int[] arr) {
-        int amount = 0;
-        int level = 1;
-
-        for(int i = 0; i < arr.length - 1; i++) {
-            System.out.printf("%4d ", arr[i]);
-            if(++amount == Math.pow(2, level - 1)) {
-                level++;
-                amount = 0;
-                System.out.println("");
-            }
-        };
-        
-        System.out.println("");
-    };
-
     public static void heapfy(int[] arr) {
         for(int i = Math.floorDiv(arr.length, 2); i >= 0; i--) {
-            heapfy(arr, i);
+            maxHeap(arr, i, arr.length);
         };
     };
 
-    public static void heapfy(int[] arr, int node) {
+    public static void maxHeap(int[] arr, int node, int size) {
         int leftChild = (node * 2) + 1;
         int rightChild = leftChild + 1;
 
         int bigger = node;
-        boolean hasLeft = leftChild < arr.length;
-        boolean hasRight = rightChild < arr.length;
+        boolean hasLeft = leftChild < size;
+        boolean hasRight = rightChild < size;
 
         if(!hasLeft && !hasRight) return;
         if(hasLeft && arr[leftChild] > arr[bigger]) bigger = leftChild;
@@ -39,7 +23,32 @@ public class HeapSort {
 
         if(node != bigger) {
             Utils.swap(arr, node, bigger);
-            heapfy(arr, bigger);
+            maxHeap(arr, bigger, size);
         };
     };
+
+    public static void sort(int[] arr) {
+        int[] temp = new int[arr.length];
+        for(int i = 0; i < temp.length; i++) {
+            temp[i] = arr[0];
+            Utils.swap(arr, 0, arr.length - 1 - i);
+            maxHeap(arr, 0, arr.length - 1 - i);
+        };
+    };
+
+    // public static void print(int[] arr) {
+    //     int amount = 0;
+    //     int level = 1;
+
+    //     for(int i = 0; i < arr.length - 1; i++) {
+    //         System.out.printf("%4d ", arr[i]);
+    //         if(++amount == Math.pow(2, level - 1)) {
+    //             level++;
+    //             amount = 0;
+    //             System.out.println("");
+    //         }
+    //     };
+        
+    //     System.out.println("");
+    // };
 }

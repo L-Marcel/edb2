@@ -20,7 +20,9 @@ public class HeapSort {
     };
 
     public static void heapfy(int[] arr) {
-        heapfy(arr, 0);
+        for(int i = Math.floorDiv(arr.length, 2); i >= 0; i--) {
+            heapfy(arr, i);
+        };
     };
 
     public static void heapfy(int[] arr, int node) {
@@ -35,21 +37,9 @@ public class HeapSort {
         if(hasLeft && arr[leftChild] > arr[bigger]) bigger = leftChild;
         if(hasRight && arr[rightChild] > arr[bigger]) bigger = rightChild;
 
-        Utils.swap(arr, node, bigger);
-        heapfy(arr, leftChild);
-        heapfy(arr, rightChild);
-
-        // int parent = Math.floorDiv(arr.length - 1, 2);
-        // while(parent >= 0) {
-        //     System.out.println(parent);
-        //     int left = parent * 2 + 1;
-        //     int right = left + 1;
-
-        //     int biggerChild = left;
-        //     if(right <= arr.length - 1 && arr[left] < arr[right]) biggerChild = right;
-
-        //     if(arr[parent] < arr[biggerChild]) arr = Utils.swap(arr, parent, biggerChild);
-        //     parent = Math.floorDiv(left - 2, 2);
-        // };
+        if(node != bigger) {
+            Utils.swap(arr, node, bigger);
+            heapfy(arr, bigger);
+        };
     };
 }

@@ -1,11 +1,10 @@
 package sort;
 
 public class Utils {
-    public static int[] swap(int[] arr, int a, int b)  {
+    public static void swap(int[] arr, int a, int b)  {
         int value = arr[a];
         arr[a] = arr[b];
         arr[b] = value;
-        return arr;
     };
     
     public static boolean isSorted(int[] arr) {

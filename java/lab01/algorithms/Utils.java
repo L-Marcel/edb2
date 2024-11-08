@@ -1,4 +1,4 @@
-package lab01;
+package algorithms;
 
 public class Utils {
     public static void swap(int[] arr, int a, int b)  {

@@ -1,6 +1,4 @@
-package lab01.algorithms;
-
-import lab01.Utils;
+package algorithms;
 
 public class BogoSort {
     public static void sort(int[] arr) {

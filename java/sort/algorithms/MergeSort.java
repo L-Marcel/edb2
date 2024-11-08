@@ -1,7 +1,10 @@
 package sort.algorithms;
 
+import sort.Utils;
+
 public class MergeSort {
     public static void sort(int[] arr) {
+        if(Utils.isSorted(arr)) return;
         sort(arr, 0, arr.length - 1);
     };
 

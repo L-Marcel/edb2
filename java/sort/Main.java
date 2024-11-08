@@ -11,7 +11,7 @@ public class Main {
     private static Random rand = new Random();
     public static void main(String[] args) {
         rand.setSeed(LocalTime.now().toNanoOfDay());
-        System.out.println("Testing merger sort....");
+        System.out.println("Testing merge sort....");
         for (int i = 0; i < 30; i++) {
             int[] raw = generateArray(10);
             MergeSort.sort(raw);

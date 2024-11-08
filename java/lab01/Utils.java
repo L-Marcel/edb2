@@ -1,4 +1,4 @@
-package sort;
+package lab01;
 
 public class Utils {
     public static void swap(int[] arr, int a, int b)  {

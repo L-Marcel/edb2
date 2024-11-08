@@ -1,6 +1,6 @@
-package sort.algorithms;
+package lab01.algorithms;
 
-import sort.Utils;
+import lab01.Utils;
 
 public class HeapSort {
     public static void heapfy(int[] arr) {
@@ -28,9 +28,7 @@ public class HeapSort {
     };
 
     public static void sort(int[] arr) {
-        int[] temp = new int[arr.length];
-        for(int i = 0; i < temp.length; i++) {
-            temp[i] = arr[0];
+        for(int i = 0; i < arr.length; i++) {
             Utils.swap(arr, 0, arr.length - 1 - i);
             maxHeap(arr, 0, arr.length - 1 - i);
         };

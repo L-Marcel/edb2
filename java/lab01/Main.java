@@ -1,11 +1,11 @@
-package sort;
-
-import sort.algorithms.BogoSort;
-import sort.algorithms.HeapSort;
-import sort.algorithms.MergeSort;
+package lab01;
 
 import java.time.LocalTime;
 import java.util.Random;
+
+import lab01.algorithms.BogoSort;
+import lab01.algorithms.HeapSort;
+import lab01.algorithms.MergeSort;
 
 public class Main {
     private static Random rand = new Random();

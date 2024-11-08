@@ -23,7 +23,7 @@ fn main() {
         assert!(raw.is_sorted());
     }
     
-    println!("Testing bogo sort (can take a time)...");
+    println!("Testing bogo sort...");
     for _ in 0..30 {
         let mut raw: Vec<i8> = generate_array(10);
         bogo_sort(&mut raw);
